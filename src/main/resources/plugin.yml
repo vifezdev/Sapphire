@@ -1,0 +1,3 @@
+name: Sapphire
+version: '${project.version}'
+main: cc.kiradev.sapphire.Sapphire
