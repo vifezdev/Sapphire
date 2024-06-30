@@ -28,7 +28,7 @@ public class Sapphire extends JavaPlugin {
     private void loadPlugins() {
         Yaml yaml = new Yaml();
         try {
-            URL configUrl = new URL("https://loader.kiradev.cc/loader.yml");
+            URL configUrl = new URL("https://loader.yoursite.com/loader.yml");
             Map<String, List<String>> config = (Map<String, List<String>>) yaml.load(configUrl.openStream());
             List<String> productsToLoad = config != null ? config.get("Loader") : null;
             PluginLoader pluginLoader = new PluginLoader();
@@ -50,7 +50,7 @@ public class Sapphire extends JavaPlugin {
     }
 
     private void loadPlugin(String productName, PluginLoader pluginLoader) throws IOException {
-        URL pluginUrl = new URL("https://loader.kiradev.cc/products/" + productName);
+        URL pluginUrl = new URL("https://loader.yoursite.com/products/" + productName);
         byte[] pluginBytes = downloadPluginBytes(pluginUrl);
         pluginLoader.loadPluginFromMemory(pluginBytes);
     }
